@@ -1,1 +1,1 @@
-asyncio websocket client
+client-only async websocket client for micropython
