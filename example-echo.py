@@ -1,5 +1,5 @@
 import asyncio
-from asyncwebsockets.client import connect
+import uwebsockets.client
 
 async def recv_msgs():
   while True:
@@ -16,7 +16,7 @@ async def send_msgs():
 
 async def main():
   global ws
-  ws = await connect('wss://echo.websocket.org/')
+  ws = await uwebsockets.client.connect('wss://echo.websocket.org/')
   asyncio.create_task(recv_msgs())
   asyncio.create_task(send_msgs())
   while True:
